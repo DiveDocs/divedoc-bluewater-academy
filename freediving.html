@@ -1,37 +1,67 @@
-<!-- DiveDoc Bluewater Academy — Subpage Templates with DE/EN Toggle -->
-
-<!-- Example: freediving.html -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Freitauchen - Apnoea | DiveDoc Bluewater Academy</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#e0f7fa; color:#0b3c5d; }
+    header { background: linear-gradient(rgba(11,60,93,0.7), rgba(11,60,93,0.7)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat; color:white; text-align:center; padding:120px 20px; }
+    nav { background:#0b3c5d; padding:12px; text-align:center; }
+    nav a { color:white; margin:0 10px; text-decoration:none; font-weight:bold; }
+    .language-toggle { margin-left:20px; font-weight: normal; cursor:pointer; color:#06b6d4; }
+    .container { max-width:1100px; margin:auto; padding:40px 20px; }
+    .cards { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:25px; margin-top:30px; }
+    .card { background:white; border-radius:12px; padding:20px; box-shadow:0 10px 25px rgba(0,0,0,0.08); transition: transform 0.2s; }
+    .card:hover { transform: translateY(-5px); }
+    .card h3 { margin-top:0; color:#0b3c5d; }
+    .btn { display:inline-block; margin-top:15px; padding:12px 18px; background:#0b3c5d; color:white; text-decoration:none; border-radius:8px; transition: background 0.2s; }
+    .btn:hover { background:#06436f; }
+    footer { text-align:center; padding:30px; color:#567; margin-top:40px; }
+    .hidden { display:none; }
+  </style>
   <script>
     function toggleLanguage(lang) {
       const deElements = document.querySelectorAll('.de');
       const enElements = document.querySelectorAll('.en');
-      if(lang==='de'){ deElements.forEach(e=>e.classList.remove('hidden')); enElements.forEach(e=>e.classList.add('hidden')); }
-      else{ deElements.forEach(e=>e.classList.add('hidden')); enElements.forEach(e=>e.classList.remove('hidden')); }
+      if(lang==='de'){
+        deElements.forEach(e => e.classList.remove('hidden'));
+        enElements.forEach(e => e.classList.add('hidden'));
+      } else {
+        deElements.forEach(e => e.classList.add('hidden'));
+        enElements.forEach(e => e.classList.remove('hidden'));
+      }
     }
   </script>
 </head>
 <body>
+
 <header>
   <h1>DiveDoc Bluewater Academy</h1>
   <p class="de">Ausbildung für engagierte Wassersportler — über und unter der Oberfläche</p>
   <p class="en hidden">Training for dedicated water sports enthusiasts — above and below the surface</p>
-  <span class="language-toggle" onclick="toggleLanguage('de')">DE</span> | <span class="language-toggle" onclick="toggleLanguage('en')">EN</span>
+  <span class="language-toggle" onclick="toggleLanguage('de')">DE</span> | 
+  <span class="language-toggle" onclick="toggleLanguage('en')">EN</span>
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="freediving.html">Freitauchen - Apnoea</a>
-  <a href="scuba.html">Gerätetauchen</a>
-  <a href="sailing.html">Hochseesegeln</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Kontakt</a>
+  <a href="index.html" class="de">Home</a>
+  <a href="index.html" class="en hidden">Home</a>
+
+  <a href="freediving.html" class="de">Freitauchen - Apnoea</a>
+  <a href="freediving.html" class="en hidden">Freediving</a>
+
+  <a href="scuba.html" class="de">Gerätetauchen</a>
+  <a href="scuba.html" class="en hidden">Advanced Scuba</a>
+
+  <a href="sailing.html" class="de">Hochseesegeln</a>
+  <a href="sailing.html" class="en hidden">Bluewater Sailing</a>
+
+  <a href="about.html" class="de">About</a>
+  <a href="about.html" class="en hidden">About</a>
+
+  <a href="contact.html" class="de">Kontakt</a>
+  <a href="contact.html" class="en hidden">Contact</a>
 </nav>
 
 <div class="container">
@@ -42,22 +72,60 @@
   <p class="de">Unsere SSI Freediving Kurse decken Level 1 bis Advanced ab. Wir vermitteln Atemtechnik, Entspannung, Sicherheit und effiziente Bewegung unter Wasser. Kleine Gruppen und persönliche Betreuung garantieren ein praxisnahes Lernen.</p>
   <p class="en hidden">Our SSI Freediving courses cover Level 1 to Advanced. We teach breathing techniques, relaxation, safety, and efficient underwater movement. Small groups and personal instruction ensure hands-on learning.</p>
 
-  <h3 class="de">Kursinhalte</h3>
-  <h3 class="en hidden">Course Content</h3>
-  <ul class="de">
-    <li>Level 1 bis Advanced</li>
-    <li>Atem- und Entspannungstechniken</li>
-    <li>Sicherheitsverfahren und Buddy-System</li>
-    <li>Effiziente Bewegungsabläufe unter Wasser</li>
-  </ul>
-  <ul class="en hidden">
-    <li>Level 1 to Advanced</li>
-    <li>Breathing and relaxation techniques</li>
-    <li>Safety procedures and buddy system</li>
-    <li>Efficient underwater movements</li>
-  </ul>
+  <div class="cards">
+    <div class="card">
+      <h3 class="de">Kursinhalte</h3>
+      <h3 class="en hidden">Course Content</h3>
+      <ul class="de">
+        <li>Level 1 bis Advanced</li>
+        <li>Atem- und Entspannungstechniken</li>
+        <li>Sicherheitsverfahren und Buddy-System</li>
+        <li>Effiziente Bewegungsabläufe unter Wasser</li>
+      </ul>
+      <ul class="en hidden">
+        <li>Level 1 to Advanced</li>
+        <li>Breathing and relaxation techniques</li>
+        <li>Safety procedures and buddy system</li>
+        <li>Efficient underwater movements</li>
+      </ul>
+      <a class="btn" href="contact.html">
+        <span class="de">Jetzt Anfragen</span>
+        <span class="en hidden">Request Info</span>
+      </a>
+    </div>
 
-  <a class="btn" href="contact.html">Jetzt Anfragen / Request Info</a>
+    <div class="card">
+      <h3 class="de">Voraussetzungen</h3>
+      <h3 class="en hidden">Requirements</h3>
+      <ul class="de">
+        <li>Gesundheitliche Eignung zum Apnoetauchen</li>
+        <li>Mindestens 12 Jahre alt</li>
+        <li>Grundkenntnisse Schwimmen</li>
+      </ul>
+      <ul class="en hidden">
+        <li>Medical clearance for freediving</li>
+        <li>At least 12 years old</li>
+        <li>Basic swimming skills</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 class="de">Ausstattung</h3>
+      <h3 class="en hidden">Equipment</h3>
+      <ul class="de">
+        <li>Neoprenanzug</li>
+        <li>Tauchmaske und Schnorchel</li>
+        <li>Fins / Flossen</li>
+        <li>Sicherheitsboje</li>
+      </ul>
+      <ul class="en hidden">
+        <li>Wetsuit</li>
+        <li>Diving mask and snorkel</li>
+        <li>Fins</li>
+        <li>Safety buoy</li>
+      </ul>
+    </div>
+  </div>
 
 </div>
 
@@ -68,12 +136,3 @@
 
 </body>
 </html>
-
-<!-- Duplicate this template for scuba.html and sailing.html -->
-<!-- Replace the main <h2>, <p>, and <ul> content with the appropriate program details -->
-<!-- Maintain DE/EN toggle and classes -->
-<!-- Example headings for other subpages: -->
-<!-- scuba.html -->
-<!-- DE: Gerätetauchen, EN: Advanced Scuba -->
-<!-- sailing.html -->
-<!-- DE: Hochseesegeln, EN: Bluewater Sailing -->
