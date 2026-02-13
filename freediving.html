@@ -1,0 +1,79 @@
+<!-- DiveDoc Bluewater Academy — Subpage Templates with DE/EN Toggle -->
+
+<!-- Example: freediving.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freitauchen - Apnoea | DiveDoc Bluewater Academy</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    function toggleLanguage(lang) {
+      const deElements = document.querySelectorAll('.de');
+      const enElements = document.querySelectorAll('.en');
+      if(lang==='de'){ deElements.forEach(e=>e.classList.remove('hidden')); enElements.forEach(e=>e.classList.add('hidden')); }
+      else{ deElements.forEach(e=>e.classList.add('hidden')); enElements.forEach(e=>e.classList.remove('hidden')); }
+    }
+  </script>
+</head>
+<body>
+<header>
+  <h1>DiveDoc Bluewater Academy</h1>
+  <p class="de">Ausbildung für engagierte Wassersportler — über und unter der Oberfläche</p>
+  <p class="en hidden">Training for dedicated water sports enthusiasts — above and below the surface</p>
+  <span class="language-toggle" onclick="toggleLanguage('de')">DE</span> | <span class="language-toggle" onclick="toggleLanguage('en')">EN</span>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="freediving.html">Freitauchen - Apnoea</a>
+  <a href="scuba.html">Gerätetauchen</a>
+  <a href="sailing.html">Hochseesegeln</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Kontakt</a>
+</nav>
+
+<div class="container">
+
+  <h2 class="de">Freitauchen - Apnoea</h2>
+  <h2 class="en hidden">Freediving</h2>
+
+  <p class="de">Unsere SSI Freediving Kurse decken Level 1 bis Advanced ab. Wir vermitteln Atemtechnik, Entspannung, Sicherheit und effiziente Bewegung unter Wasser. Kleine Gruppen und persönliche Betreuung garantieren ein praxisnahes Lernen.</p>
+  <p class="en hidden">Our SSI Freediving courses cover Level 1 to Advanced. We teach breathing techniques, relaxation, safety, and efficient underwater movement. Small groups and personal instruction ensure hands-on learning.</p>
+
+  <h3 class="de">Kursinhalte</h3>
+  <h3 class="en hidden">Course Content</h3>
+  <ul class="de">
+    <li>Level 1 bis Advanced</li>
+    <li>Atem- und Entspannungstechniken</li>
+    <li>Sicherheitsverfahren und Buddy-System</li>
+    <li>Effiziente Bewegungsabläufe unter Wasser</li>
+  </ul>
+  <ul class="en hidden">
+    <li>Level 1 to Advanced</li>
+    <li>Breathing and relaxation techniques</li>
+    <li>Safety procedures and buddy system</li>
+    <li>Efficient underwater movements</li>
+  </ul>
+
+  <a class="btn" href="contact.html">Jetzt Anfragen / Request Info</a>
+
+</div>
+
+<footer>
+  <p class="de">© 2026 DiveDoc Bluewater Academy</p>
+  <p class="en hidden">© 2026 DiveDoc Bluewater Academy</p>
+</footer>
+
+</body>
+</html>
+
+<!-- Duplicate this template for scuba.html and sailing.html -->
+<!-- Replace the main <h2>, <p>, and <ul> content with the appropriate program details -->
+<!-- Maintain DE/EN toggle and classes -->
+<!-- Example headings for other subpages: -->
+<!-- scuba.html -->
+<!-- DE: Gerätetauchen, EN: Advanced Scuba -->
+<!-- sailing.html -->
+<!-- DE: Hochseesegeln, EN: Bluewater Sailing -->
