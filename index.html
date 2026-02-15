@@ -19,6 +19,70 @@
     footer { text-align:center; padding:30px; color:#567; }
     .hidden { display:none; }
   </style>
+  <header class="hero">
+
+  <div class="topbar">
+    <div class="logo">DiveDoc Bluewater Academy</div>
+    <div class="lang">
+      <span onclick="toggleLanguage('de')">DE</span> |
+      <span onclick="toggleLanguage('en')">EN</span>
+    </div>
+  </div>
+
+  <div class="slider">
+
+    <!-- Freediving -->
+    <div class="slide active" onclick="location.href='freediving.html'">
+      <img src="assets/images/freediving1.png">
+      <div class="caption">
+        <h1 class="de">Freitauchen – Apnoea</h1>
+        <h1 class="en hidden">Freediving</h1>
+        <p class="de">Ruhe. Fokus. Tiefe.</p>
+        <p class="en hidden">Calm. Focus. Depth.</p>
+        <button>Mehr erfahren</button>
+      </div>
+    </div>
+
+    <!-- Scuba -->
+    <div class="slide" onclick="location.href='scuba.html'">
+      <img src="assets/images/scuba1.png">
+      <div class="caption">
+        <h1 class="de">Gerätetauchen</h1>
+        <h1 class="en hidden">Advanced Scuba</h1>
+        <p class="de">Kompetenz unter Wasser.</p>
+        <p class="en hidden">Confidence underwater.</p>
+        <button>Mehr erfahren</button>
+      </div>
+    </div>
+
+    <!-- Sailing -->
+    <div class="slide" onclick="location.href='sailing.html'">
+      <img src="assets/images/sailing1.png">
+      <div class="caption">
+        <h1 class="de">Hochseesegeln</h1>
+        <h1 class="en hidden">Bluewater Sailing</h1>
+        <p class="de">Erfahrung auf offenem Meer.</p>
+        <p class="en hidden">Experience on the open sea.</p>
+        <button>Mehr erfahren</button>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+  <script>
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(n){
+  slides[current].classList.remove("active");
+  current = (n + slides.length) % slides.length;
+  slides[current].classList.add("active");
+}
+
+setInterval(() => showSlide(current + 1), 6000);
+</script>
+
   <script>
     function toggleLanguage(lang) {
       const deElements = document.querySelectorAll('.de');
@@ -29,12 +93,55 @@
   </script>
 </head>
 <body>
+  <header class="hero">
 
-<header>
-  <h1>DiveDoc Bluewater Academy</h1>
-  <p class="de">Ausbildung für engagierte Wassersportler — über und unter der Oberfläche</p>
-  <p class="en hidden">Training for dedicated water sports enthusiasts — above and below the surface</p>
-  <span class="language-toggle" onclick="toggleLanguage('de')">DE </span> | <span class="language-toggle" onclick="toggleLanguage('en')">EN</span>
+  <div class="topbar">
+    <div class="logo">DiveDoc Bluewater Academy</div>
+    <div class="lang">
+      <span onclick="toggleLanguage('de')">DE</span> |
+      <span onclick="toggleLanguage('en')">EN</span>
+    </div>
+  </div>
+
+  <div class="slider">
+
+    <!-- Freediving -->
+    <div class="slide active" onclick="location.href='freediving.html'">
+      <img src="assets/images/freediving1.png">
+      <div class="caption">
+        <h1 class="de">Freitauchen – Apnoea</h1>
+        <h1 class="en hidden">Freediving</h1>
+        <p class="de">Ruhe. Fokus. Tiefe.</p>
+        <p class="en hidden">Calm. Focus. Depth.</p>
+        <button>Mehr erfahren</button>
+      </div>
+    </div>
+
+    <!-- Scuba -->
+    <div class="slide" onclick="location.href='scuba.html'">
+      <img src="assets/images/scuba1.png">
+      <div class="caption">
+        <h1 class="de">Gerätetauchen</h1>
+        <h1 class="en hidden">Advanced Scuba</h1>
+        <p class="de">Kompetenz unter Wasser.</p>
+        <p class="en hidden">Confidence underwater.</p>
+        <button>Mehr erfahren</button>
+      </div>
+    </div>
+
+    <!-- Sailing -->
+    <div class="slide" onclick="location.href='sailing.html'">
+      <img src="assets/images/sailing1.png">
+      <div class="caption">
+        <h1 class="de">Hochseesegeln</h1>
+        <h1 class="en hidden">Bluewater Sailing</h1>
+        <p class="de">Erfahrung auf offenem Meer.</p>
+        <p class="en hidden">Experience on the open sea.</p>
+        <button>Mehr erfahren</button>
+      </div>
+    </div>
+
+  </div>
 </header>
 
 <nav>
