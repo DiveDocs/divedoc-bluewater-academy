@@ -1,183 +1,104 @@
+<!-- DiveDoc Bluewater Academy — GitHub Pages Starter with Subpages and Language Toggle (Updated German Page Titles) -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ocean Sports — Premium Landing</title>
-  <meta name="description" content="Freediving, Scuba Diving, and Bluewater Sailing — Premium Experiences" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DiveDoc Bluewater Academy</title>
   <style>
-    :root{
-      --bg:#071a26;          /* deep ocean */
-      --bg-soft:#0b2a3a;
-      --accent:#2ec4ff;      /* cyan */
-      --accent-2:#7af0ff;    /* light cyan */
-      --text:#e9f6ff;        /* near white */
-      --muted:#9fc7d9;
-      --card:#0d3145cc;      /* glass */
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#020b12 60%);color:var(--text)}
-    a{color:inherit;text-decoration:none}
-
-    /* NAV */
-    .nav{position:fixed;inset:0 0 auto 0;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;z-index:50;background:linear-gradient(180deg,rgba(2,11,18,.75),rgba(2,11,18,.25),transparent);backdrop-filter:blur(6px)}
-    .brand{font-weight:800;letter-spacing:.5px}
-    .nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
-    .btn{padding:10px 16px;border:1px solid #2b6b86;border-radius:999px}
-
-    /* HERO / CAROUSEL */
-    .hero{position:relative;height:100vh;min-height:680px;overflow:hidden}
-    .slides{display:flex;height:100%;transition:transform .7s ease}
-    .slide{min-width:100%;position:relative;display:flex;align-items:center;justify-content:center;text-align:center}
-    .slide::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,11,18,.2),rgba(2,11,18,.6));z-index:1}
-    .slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .caption{position:relative;z-index:2;max-width:900px;padding:0 20px}
-    .eyebrow{letter-spacing:.25em;text-transform:uppercase;color:var(--accent-2);font-weight:600}
-    h1{font-size:clamp(36px,6vw,64px);margin:12px 0}
-    .lead{color:var(--muted);font-size:clamp(16px,2.2vw,20px)}
-    .cta{margin-top:28px;display:flex;gap:14px;justify-content:center}
-    .cta a{background:var(--accent);color:#00324a;padding:12px 18px;border-radius:999px;font-weight:700}
-    .cta a.secondary{background:transparent;border:1px solid #2b6b86;color:var(--text)}
-
-    /* arrows */
-    .arrow{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:#082433aa;border:1px solid #2b6b86;cursor:pointer;z-index:3}
-    .arrow.left{left:16px}
-    .arrow.right{right:16px}
-
-    /* dots */
-    .dots{position:absolute;left:0;right:0;bottom:26px;display:flex;gap:10px;justify-content:center;z-index:3}
-    .dot{width:10px;height:10px;border-radius:50%;background:#2b6b86;cursor:pointer}
-    .dot.active{background:var(--accent)}
-
-    /* SECTIONS */
-    .section{padding:96px 24px;max-width:1200px;margin:0 auto}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .card{background:var(--card);border:1px solid #1b4a60;border-radius:18px;padding:22px;backdrop-filter:blur(8px)}
-    .card h3{margin-top:0}
-    footer{padding:40px 24px;text-align:center;color:var(--muted)}
-
-    @media (max-width:900px){
-      .grid{grid-template-columns:1fr}
-      .nav ul{display:none}
-    }
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#f4f7f9; color:#0b3c5d; }
+    header { background: linear-gradient(rgba(11,60,93,0.75), rgba(11,60,93,0.75)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat; color:white; text-align:center; padding:120px 20px; }
+    nav { background:#0b3c5d; padding:12px; text-align:center; }
+    nav a { color:white; margin:0 10px; text-decoration:none; font-weight:bold; }
+    .language-toggle { margin-left: 20px; font-weight: normal; cursor:pointer; color:#06b6d4; }
+    .container { max-width:1100px; margin:auto; padding:40px 20px; }
+    .cards { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:25px; }
+    .card { background:white; border-radius:12px; padding:20px; box-shadow:0 10px 25px rgba(0,0,0,0.08); }
+    .card h3 { margin-top:0; }
+    .btn { display:inline-block; margin-top:15px; padding:10px 14px; background:#0b3c5d; color:white; text-decoration:none; border-radius:6px; }
+    footer { text-align:center; padding:30px; color:#567; }
+    .hidden { display:none; }
   </style>
+  <script>
+    function toggleLanguage(lang) {
+      const deElements = document.querySelectorAll('.de');
+      const enElements = document.querySelectorAll('.en');
+      if(lang==='de'){ deElements.forEach(e=>e.classList.remove('hidden')); enElements.forEach(e=>e.classList.add('hidden')); }
+      else{ deElements.forEach(e=>e.classList.add('hidden')); enElements.forEach(e=>e.classList.remove('hidden')); }
+    }
+  </script>
 </head>
 <body>
-  <nav class="nav">
-    <div class="brand">Ocean Sports</div>
-    <ul>
-      <li><a href="#freediving">Freediving</a></li>
-      <li><a href="#scuba">Scuba</a></li>
-      <li><a href="#sailing">Sailing</a></li>
-    </ul>
-    <a class="btn" href="#contact">Contact</a>
-  </nav>
 
-  <!-- HERO CAROUSEL -->
-  <header class="hero">
-    <div class="slides" id="slides">
-      <!-- Slide 1: Freediving -->
-      <section class="slide" id="freediving">
-        <img src="assets/images/freediving.jpg" alt="Freediving" />
-        <div class="caption">
-          <div class="eyebrow">Freediving</div>
-          <h1>Silence. Depth. One Breath.</h1>
-          <p class="lead">Discover the art of freediving — training, safety, and pristine blue-water locations.</p>
-          <div class="cta">
-            <a href="#freediving">Explore</a>
-            <a class="secondary" href="#contact">Book a course</a>
-          </div>
-        </div>
-      </section>
+<header>
+  <h1>DiveDoc Bluewater Academy</h1>
+  <p class="de">Ausbildung für engagierte Wassersportler — über und unter der Oberfläche</p>
+  <p class="en hidden">Training for dedicated water sports enthusiasts — above and below the surface</p>
+  <span class="language-toggle" onclick="toggleLanguage('de')">DE </span> | <span class="language-toggle" onclick="toggleLanguage('en')">EN</span>
+</header>
 
-      <!-- Slide 2: Scuba -->
-      <section class="slide" id="scuba">
-        <img src="assets/images/scuba.jpg" alt="Scuba Diving" />
-        <div class="caption">
-          <div class="eyebrow">Scuba Diving</div>
-          <h1>Breathe Underwater</h1>
-          <p class="lead">From beginner to advanced — guided dives, certifications, and expeditions.</p>
-          <div class="cta">
-            <a href="#scuba">Explore</a>
-            <a class="secondary" href="#contact">Get certified</a>
-          </div>
-        </div>
-      </section>
+<nav>
+  <a href="index.html" class="de">Home</a>
+  <a href="index.html" class="en hidden">Home</a>
 
-      <!-- Slide 3: Sailing -->
-      <section class="slide" id="sailing">
-        <img src="assets/images/sailing.jpg" alt="Bluewater Sailing" />
-        <div class="caption">
-          <div class="eyebrow">Bluewater Sailing</div>
-          <h1>Across Open Oceans</h1>
-          <p class="lead">Bluewater passages, navigation training, and life aboard a cruising yacht.</p>
-          <div class="cta">
-            <a href="#sailing">Explore</a>
-            <a class="secondary" href="#contact">Join a passage</a>
-          </div>
-        </div>
-      </section>
+  <a href="freediving.html" class="de">Freitauchen - Apnoe</a>
+  <a href="freediving.html" class="en hidden">Freediving</a>
+
+  <a href="scuba.html" class="de">Gerätetauchen</a>
+  <a href="scuba.html" class="en hidden">Advanced Scuba</a>
+
+  <a href="sailing.html" class="de">Hochseesegeln</a>
+  <a href="sailing.html" class="en hidden">Bluewater Sailing</a>
+
+  <a href="about.html" class="de">Über uns</a>
+  <a href="about.html" class="en hidden">About</a>
+
+  <a href="contact.html" class="de">Kontakt</a>
+  <a href="contact.html" class="en hidden">Contact</a>
+</nav>
+
+<div class="container">
+
+  <h2 class="de">Willkommen</h2>
+  <h2 class="en hidden">Welcome</h2>
+
+  <p class="de">Praxisnahe Ausbildung im Freitauchen, fortgeschrittenen Gerätetauchen und Hochseesegeln im Mittelmeer — mit Blick auf zukünftige Atlantik- und Karibikpassagen.</p>
+  <p class="en hidden">Hands-on training in freediving, advanced scuba, and offshore sailing in the Mediterranean — preparing for future Atlantic and Caribbean operations.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3 class="de">Freitauchen</h3>
+      <h3 class="en hidden">Freediving</h3>
+      <p class="de">SSI (Advanced) Freediver — Grundlagen, Atemtechniken und Druckausgleich, Sicherheit sowie effiziente Bewegung unter Wasser.</p>
+      <p class="en hidden">SSI Freediver to Advanced — breathing and equalization techniques, safety, as well as efficient underwater movement.</p>
+      <a class="btn" href="freediving.html">Mehr erfahren / Learn more</a>
     </div>
 
-    <div class="arrow left" id="prev">❮</div>
-    <div class="arrow right" id="next">❯</div>
-    <div class="dots" id="dots"></div>
-  </header>
-
-  <!-- CONTENT -->
-  <section class="section">
-    <div class="grid">
-      <div class="card">
-        <h3>Training</h3>
-        <p>Professional instruction with a strong focus on safety and technique.</p>
-      </div>
-      <div class="card">
-        <h3>Expeditions</h3>
-        <p>Join curated trips to world‑class dive and sailing destinations.</p>
-      </div>
-      <div class="card">
-        <h3>Equipment</h3>
-        <p>Premium gear recommendations and configuration support.</p>
-      </div>
+    <div class="card">
+      <h3 class="de">Gerätetauchen</h3>
+      <h3 class="en hidden">Advanced Scuba</h3>
+      <p class="de">Tieftauchen, Navigation und Gruppenführung für engagierte Taucher.</p>
+      <p class="en hidden">Deep diving, navigation, and group leadership for dedicated divers.</p>
+      <a class="btn" href="scuba.html">
+        <span class="de">Mehr erfahren</span>
+        <span class="en hidden">Learn more</span>
+      </a>
     </div>
-  </section>
 
-  <footer id="contact">
-    © <span id="year"></span> Ocean Sports — All rights reserved
-  </footer>
+    <div class="card">
+      <h3 class="de">Hochseesegeln</h3>
+      <h3 class="en hidden">Bluewater Sailing</h3>
+      <p class="de">Offshore-Training auf privater Yacht — Navigation, Wachsysteme und Sicherheit auf See.</p>
+      <p class="en hidden">Offshore training on a private yacht — navigation, watch systems, and safety at sea.</p>
+      <a class="btn" href="sailing.html">Mehr erfahren / Learn more</a>
+    </div>
+  </div>
+</div>
 
-  <script>
-    const slides = document.getElementById('slides');
-    const total = slides.children.length;
-    let index = 0;
+<footer>
+  <p class="de">© 2026 DiveDoc Bluewater Academy</p>
+  <p class="en hidden">© 2026 DiveDoc Bluewater Academy</p>
+</footer>
 
-    const dotsWrap = document.getElementById('dots');
-    const dots = [];
-    for(let i=0;i<total;i++){
-      const d=document.createElement('div');
-      d.className='dot'+(i===0?' active':'');
-      d.onclick=()=>go(i);
-      dotsWrap.appendChild(d);
-      dots.push(d);
-    }
-
-    function update(){
-      slides.style.transform = `translateX(-${index*100}%)`;
-      dots.forEach((d,i)=>d.classList.toggle('active', i===index));
-    }
-    function go(i){ index=(i+total)%total; update(); }
-
-    document.getElementById('prev').onclick=()=>go(index-1);
-    document.getElementById('next').onclick=()=>go(index+1);
-
-    // optional auto-play
-    setInterval(()=>go(index+1), 8000);
-
-    // footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
