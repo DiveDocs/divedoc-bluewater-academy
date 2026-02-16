@@ -18,6 +18,55 @@
     .btn { display:inline-block; margin-top:15px; padding:10px 14px; background:#0b3c5d; color:white; text-decoration:none; border-radius:6px; }
     footer { text-align:center; padding:30px; color:#567; }
     .hidden { display:none; }
+    header { position:relative; overflow:hidden; }
+.hero-slide {
+  position:absolute;
+  width:100%;
+  height:100%;
+  padding:120px 20px;
+  text-align:center;
+  color:white;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity 1s ease;
+}
+
+.hero-slide.active { opacity:1; position:relative; }
+
+.arrow {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:36px;
+  background:rgba(0,0,0,0.3);
+  border:none;
+  color:white;
+  cursor:pointer;
+  padding:8px 12px;
+}
+
+.left { left:10px; }
+.right { right:10px; }
+
+.dots {
+  position:absolute;
+  bottom:20px;
+  width:100%;
+  text-align:center;
+}
+
+.dots span {
+  display:inline-block;
+  width:12px;
+  height:12px;
+  background:white;
+  border-radius:50%;
+  margin:0 6px;
+  cursor:pointer;
+  opacity:0.6;
+}
+
   </style>
   <script>
     function toggleLanguage(lang) {
@@ -26,16 +75,65 @@
       if(lang==='de'){ deElements.forEach(e=>e.classList.remove('hidden')); enElements.forEach(e=>e.classList.add('hidden')); }
       else{ deElements.forEach(e=>e.classList.add('hidden')); enElements.forEach(e=>e.classList.remove('hidden')); }
     }
+    
   </script>
+  <script>
+let slideIndex = 0;
+const slides = document.getElementsByClassName("hero-slide");
+
+function showSlide(n){
+  slides[slideIndex].classList.remove("active");
+  slideIndex = (n + slides.length) % slides.length;
+  slides[slideIndex].classList.add("active");
+}
+
+function changeSlide(n){ showSlide(slideIndex + n); }
+function setSlide(n){ showSlide(n); }
+
+setInterval(()=>changeSlide(1),8000);
+</script>
+
 </head>
 <body>
 
 <header>
-  <h1>DiveDoc Bluewater Academy</h1>
-  <p class="de">Ausbildung für engagierte Wassersportler — über und unter der Oberfläche</p>
-  <p class="en hidden">Training for dedicated water sports enthusiasts — above and below the surface</p>
-  <span class="language-toggle" onclick="toggleLanguage('de')">DE </span> | <span class="language-toggle" onclick="toggleLanguage('en')">EN</span>
+  <div class="hero-slide active" style="background-image:
+      linear-gradient(rgba(11,60,93,0.75), rgba(11,60,93,0.75)),
+      url('assets/images/freediving.jpg');">
+    <h1>DiveDoc Bluewater Academy</h1>
+    <p class="de">Freitauchen — Ausbildung entlang der Leine mit Fokus auf Technik und Sicherheit</p>
+    <p class="en hidden">Freediving — Line training focused on technique and safety</p>
+  </div>
+
+  <div class="hero-slide" style="background-image:
+      linear-gradient(rgba(11,60,93,0.75), rgba(11,60,93,0.75)),
+      url('assets/images/scuba.jpg');">
+    <h1>DiveDoc Bluewater Academy</h1>
+    <p class="de">Gerätetauchen — Tieftauchen, Navigation und Gruppenführung</p>
+    <p class="en hidden">Advanced Scuba — Deep diving, navigation, and leadership</p>
+  </div>
+
+  <div class="hero-slide" style="background-image:
+      linear-gradient(rgba(11,60,93,0.75), rgba(11,60,93,0.75)),
+      url('assets/images/sailing.jpg');">
+    <h1>DiveDoc Bluewater Academy</h1>
+    <p class="de">Hochseesegeln — Offshore-Training auf privater Yacht</p>
+    <p class="en hidden">Bluewater Sailing — Offshore training on a private yacht</p>
+  </div>
+
+  <button class="arrow left" onclick="changeSlide(-1)">❮</button>
+  <button class="arrow right" onclick="changeSlide(1)">❯</button>
+
+  <div class="dots">
+    <span onclick="setSlide(0)"></span>
+    <span onclick="setSlide(1)"></span>
+    <span onclick="setSlide(2)"></span>
+  </div>
+
+  <span class="language-toggle" onclick="toggleLanguage('de')">DE </span> |
+  <span class="language-toggle" onclick="toggleLanguage('en')">EN</span>
 </header>
+
 
 <nav>
   <a href="index.html" class="de">Home</a>
